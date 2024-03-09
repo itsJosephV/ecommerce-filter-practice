@@ -1,0 +1,81 @@
+.card-item {
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  padding: 1.2rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  background: #fafaf9;
+}
+
+.card-img {
+  height: 250px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  mix-blend-mode: multiply;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: .5rem; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card-reviews {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  margin-bottom: 1.5rem;
+}
+
+.total-reviews {
+  background-color: rgba(28, 25, 23, 0.05);
+  padding: 0 .4rem;
+  border-radius: 4px;
+  font-size: .8rem;
+}
+
+.stars-container {
+  display: flex;
+}
+
+.star-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.item-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price>del {
+  color: rgb(235, 111, 111);
+  margin-right: .3rem;
+}
+
+.card-btn {
+  all: unset;
+  background-color: rgb(16, 185, 129);
+  color: white;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: .1rem;
+  transition: all;
+  transition-duration: 200ms;
+}
+
+.card-btn:hover {
+  background-color: rgba(16, 185, 129, 0.8);
+}
+
+.bag-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+}

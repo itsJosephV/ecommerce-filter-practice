@@ -1,0 +1,12 @@
+.main-grid {
+ display: grid;
+ grid-template-columns: 256px 1fr;
+ max-width: 1280px;
+ margin: 0 auto;
+ padding-top: 1.5rem;
+}
+
+.divider {
+ margin: 1rem 0;
+ border: 0;
+}

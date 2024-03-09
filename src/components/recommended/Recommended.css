@@ -1,0 +1,23 @@
+.title {
+ margin-bottom: .5rem;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.btn {
+  all: unset;
+  background-color: rgba(28, 25, 23, 0.05);
+  padding: .3rem .6rem;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 200ms;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgba(28, 25, 23, 0.1);
+}

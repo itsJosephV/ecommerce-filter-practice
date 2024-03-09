@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'Sohne';
+  font-weight: 400;
+  src: url('assets/fonts/test-soehne-buch.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Sohne';
+  font-weight: 500;
+  src: url('assets/fonts/test-soehne-kraftig.woff2') format('woff2');
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  font: inherit;
+}
+
+body {
+  min-height: 100vh;
+  padding: 0 1.5rem;
+}
+img, picture, svg, video{
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  font-family: 'Sohne';
+  font-weight: 400;
+  line-height: 1.5;
+  color-scheme: light dark;
+  background-color: #f5f5f4;
+  color: #1c1917;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

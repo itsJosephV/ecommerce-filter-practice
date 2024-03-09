@@ -1,0 +1,15 @@
+.color-title {
+  margin-bottom: .3rem;
+}
+
+.color-radio-container {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+}
+
+.label-container {
+  display: flex;
+  gap: .3rem;
+  align-items: center;
+}

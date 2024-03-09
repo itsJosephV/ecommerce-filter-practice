@@ -1,0 +1,49 @@
+.section-container {
+  position: sticky;
+  top: 1.5rem;
+  height: calc(100vh - 1.5rem);
+  max-width: 240px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  padding-bottom: 1rem
+}
+
+.section-container::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-container {
+  background-color: #fafaf9;
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.intro-section {
+  margin-bottom: 2rem;
+}
+
+.intro-logo-container {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  font-weight: 500;
+}
+
+.shooshop-icon {
+  color: #10b981;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.intro-text {
+  color: rgba(28, 25, 23, 0.5);
+  font-size: 0.875rem;
+  text-wrap: pretty;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
