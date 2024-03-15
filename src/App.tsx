@@ -6,9 +6,15 @@ import Recommended from "./components/recommended/Recommended";
 import SideBar from "./components/sidebar/SideBar";
 import products from "./data";
 import { HandlerProps, ItemProps } from "./types";
+import { SelectedOptions } from "./types";
 
 function App() {
-  const [selectedOptions, setSelectedOptions] = useState<string | null>(null);
+  const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({
+    category: "",
+    price: "",
+    color: "",
+    company: "",
+  });
 
   const [query, setQuery] = useState("");
 
@@ -16,44 +22,79 @@ function App() {
 
   const handleInputChange: HandlerProps = (e) => {
     console.log(e.target.value);
-    setQuery(e.target.value);
+    const { value } = e.target;
+    setQuery(value);
+
+    if (value) {
+      setSelectedOptions({
+        category: "",
+        price: "",
+        color: "",
+        company: "",
+      });
+    }
   };
 
   const handleChange: HandlerProps = (e) => {
-    setSelectedOptions(e.target.value);
+    const { name, value } = e.target;
+    setSelectedOptions((prevFilters) => ({
+      ...prevFilters,
+      [name]: value,
+      // company: "",
+    }));
   };
 
   const handleClick = (item: string | null) => {
-    setSelectedOptions(item);
-  };
-
-  const filterData = () => {
-    let filteredProducts = products;
-
-    if (query) {
-      filteredProducts = filteredProducts.filter((item) =>
-        item.title.toLowerCase().includes(query.toLowerCase())
-      );
+    if (item) {
+      setSelectedOptions(() => ({
+        category: "",
+        price: "",
+        color: "",
+        company: item,
+      }));
+    } else {
+      setSelectedOptions({
+        category: "",
+        price: "",
+        color: "",
+        company: "",
+      });
     }
-
-    if (selectedOptions) {
-      filteredProducts = filteredProducts.filter(
-        (item) =>
-          item.category === selectedOptions ||
-          item.color === selectedOptions ||
-          item.company === selectedOptions ||
-          item.newPrice === selectedOptions ||
-          item.title === selectedOptions
-      );
-    }
-    setDataProducts(filteredProducts);
   };
 
   useEffect(() => {
+    const filterData = () => {
+      let filteredProducts = products;
+
+      if (selectedOptions) {
+        filteredProducts = filteredProducts.filter((item) => {
+          return (
+            (!selectedOptions.category ||
+              item.category === selectedOptions.category) &&
+            (!selectedOptions.color || item.color === selectedOptions.color) &&
+            (!selectedOptions.price ||
+              item.newPrice === selectedOptions.price) &&
+            (!selectedOptions.company ||
+              item.company === selectedOptions.company)
+          );
+        });
+      }
+
+      if (query) {
+        filteredProducts = filteredProducts.filter((item) =>
+          item.title.toLowerCase().includes(query.toLowerCase())
+        );
+      }
+
+      setDataProducts(filteredProducts);
+    };
     filterData();
+  }, [query, selectedOptions]);
+
+  useEffect(() => {
     console.log(dataProducts);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedOptions, query]);
+    console.log(selectedOptions);
+  }, [selectedOptions, dataProducts]);
 
   return (
     <div className="main-grid">

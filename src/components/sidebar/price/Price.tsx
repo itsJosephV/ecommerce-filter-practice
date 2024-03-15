@@ -10,7 +10,13 @@ const Price = ({ handleChange }: { handleChange: HandlerProps }) => {
       <h2 className="price-title">Price</h2>
       <div className="price-radio-container">
         <label className="label-container" htmlFor="">
-          <input type="radio" value="" name="test3" />
+          <input
+            type="radio"
+            value=""
+            name="price"
+            onChange={handleChange}
+            defaultChecked
+          />
           <span>all</span>
         </label>
         {price
@@ -21,7 +27,7 @@ const Price = ({ handleChange }: { handleChange: HandlerProps }) => {
                 key={`${item + i}`}
                 handleChange={handleChange}
                 title={`${+item >= 200 ? item + "+" : 50 * i + " - " + item}`}
-                name="test3"
+                name="price"
                 value={item}
               />
             );

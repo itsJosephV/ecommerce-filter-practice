@@ -15,8 +15,9 @@ const Colors = ({ handleChange }: { handleChange: HandlerProps }) => {
             className="color-input"
             // style={{ accentColor: "red" }}
             value=""
-            name="test2"
+            name="color"
             onChange={handleChange}
+            defaultChecked
           />
           <span>all</span>
         </label>
@@ -26,7 +27,7 @@ const Colors = ({ handleChange }: { handleChange: HandlerProps }) => {
               key={`${item + i}`}
               handleChange={handleChange}
               title={item}
-              name="test2"
+              name="color"
               value={item}
             />
           );

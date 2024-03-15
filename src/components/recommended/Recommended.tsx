@@ -10,10 +10,10 @@ const Recommended = ({
   const itemBrands = [...new Set(products.map((item) => item.company))];
   return (
     <section>
-      <h2 className="title">Recommended</h2>
+      <h2 className="title">Recommended brands</h2>
       <div className="btn-container">
-        <button onClick={() => handleClick(null)} className="btn">
-          All
+        <button onClick={() => handleClick("")} className="btn">
+          All Products
         </button>
         {itemBrands.map((item, i) => {
           return (

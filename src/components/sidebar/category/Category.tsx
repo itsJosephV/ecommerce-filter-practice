@@ -10,7 +10,13 @@ const Category = ({ handleChange }: { handleChange: HandlerProps }) => {
       <h2 className="category-title">Category</h2>
       <div className="category-radio-container">
         <label className="label-container" htmlFor="">
-          <input onChange={handleChange} type="radio" value="" name="test" />
+          <input
+            onChange={handleChange}
+            type="radio"
+            value=""
+            name="category"
+            defaultChecked
+          />
           <span>all</span>
         </label>
         {categories.map((item, i) => {
@@ -18,7 +24,7 @@ const Category = ({ handleChange }: { handleChange: HandlerProps }) => {
             <Input
               key={`${item + i}`}
               handleChange={handleChange}
-              name="test"
+              name="category"
               value={item}
               title={item}
             />

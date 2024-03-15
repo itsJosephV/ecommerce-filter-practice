@@ -11,4 +11,11 @@ export interface ItemProps {
   category: string;
 }
 
+export interface SelectedOptions {
+  category: string;
+  color: string;
+  price: string;
+  company?: string
+}
+
 export type HandlerProps = (e: React.ChangeEvent<HTMLInputElement>) => void;
